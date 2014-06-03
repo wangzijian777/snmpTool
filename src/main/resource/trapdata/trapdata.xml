@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trapDatas times="1">
+	<trapData>
+		<!-- 
+			inside method:
+			1. int randomInt(int start, int end),  return a int value witch >= start , < end,
+			2. String randomString(length 5), return a string witch length is 5. append by [a-z]
+			3. String nowTime(String format), return a format now time string.
+			inside type:  match the MIB SMI Type
+			1. OID
+			2. TimeTicks
+			3. OctetString
+			4. Integer32
+		 -->
+		<trapOid>.1.3.6.1.4.1.7569.1.2.2.${randomInt(13, 100)}</trapOid>
+		<sysUpTime>0</sysUpTime>
+		<varBindings>
+			<varBinding oid=".1.3.6.1.4.1.7569.1.2.1.23.3.1.2" type="OctetString" desciption="sequenceId">${randomString(5)}</varBinding>
+			<varBinding oid=".1.3.6.1.4.1.7569.1.2.1.23.3.1.3" type="OctetString" desciption="eventTime">${nowTime(yyyy-MM-dd'T'HH:mm:ss.SSS'Z' H:mm)}</varBinding>
+			<varBinding oid=".1.3.6.1.4.1.7569.1.2.1.23.3.1.4" type="Integer32" desciption="eventType">0</varBinding>
+			<varBinding oid=".1.3.6.1.4.1.7569.1.2.1.23.3.1.5" type="OctetString" desciption="alarmId">${randomString(5)}</varBinding>
+			<varBinding oid=".1.3.6.1.4.1.7569.1.2.1.23.3.1.6" type="OctetString" desciption="alarmText">${randomString(5)}</varBinding>
+			<varBinding oid=".1.3.6.1.4.1.7569.1.2.1.23.3.1.7" type="Integer32" desciption="alarmSeverity">0</varBinding>
+			<varBinding oid=".1.3.6.1.4.1.7569.1.2.1.23.3.1.8" type="OctetString" desciption="instanceId">${randomString(5)}</varBinding>
+			<varBinding oid=".1.3.6.1.4.1.7569.1.2.1.23.3.1.9" type="OctetString" desciption="slotNumber">${randomInt(1, 14)}</varBinding>
+		</varBindings>
+	</trapData>
+</trapDatas>
